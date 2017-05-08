@@ -1,0 +1,15 @@
+{
+    "name": "simple-blogging",
+    "version": "1.0.0",
+    "description": "Homework for FMI course - Node, Express, React",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/KalinaGeorgieva/FMI-course-Node-Express-React.git"
+    },
+    "author": "Kalina Georgieva",
+    "license": "ISC"
+}
