@@ -1,9 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
+import Header from './components/header/header';
 
 const App = () => {
     return (
-        <div>App</div>
+        <div>
+             <Header/>
+        </div>
+       
     )
 }
 
