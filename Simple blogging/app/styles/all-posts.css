@@ -1,0 +1,22 @@
+.all-posts {
+    margin-left: 40px;
+    width: 700px;
+}
+
+.all-posts .title{
+    padding: 0;
+}
+
+.all-posts .span-group span {
+    margin-right: 5px;
+}
+
+.all-posts h4 {
+    display: inline-block;
+}
+
+.btn-edit-post, .btn-remove-post{
+    float: right;
+    margin: 0;
+    top: 3px;
+}

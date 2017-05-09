@@ -7,15 +7,14 @@ const initialState = {
 }
 
 const post = (state, action) => {
-    debugger;
     switch (action.type) {
         case ADD_POST:
             return {
                 id: action.id,
-                author: action.post.value,
-                title: action.post.value,
-                msg: action.post.value,
-                timestamp: Date.now(),
+                author: action.post.author,
+                title: action.post.title,
+                msg: action.post.msg,
+                timestamp: action.timestamp,
                 active: true
             };
         case CHANGE_STATUS:
@@ -26,7 +25,6 @@ const post = (state, action) => {
 };
 
 function postReducer(state = initialState, action) {
-    debugger;
     switch (action.type) {
         case ADD_POST:
             return {posts: [

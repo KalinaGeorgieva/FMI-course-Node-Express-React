@@ -22,7 +22,7 @@ class Header extends React.Component {
                     </nav>
 
                     
-                    <Route exact path="/" render={() => <AddPost author={el=> this.author = el} title={el=> this.title = el} msg={el=> this.msg = el} notificationSystem={el=> this.notificationSystem = el} onClick={this.handleAddPost}/>}/>
+                    <Route exact path="/" render={() => <AddPost/>}/>
                     <Route path="/all" component={All}/>
                     <Route path="/last" component={Last}/>
                 </div>  

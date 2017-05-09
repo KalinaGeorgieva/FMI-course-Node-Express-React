@@ -2,17 +2,15 @@ import {ADD_POST, REMOVE_POST, EDIT_POST, CHANGE_STATUS} from '../config/constan
 
 
 let nextId = 0;
-export function addPost(props){
+export function addPost(title, author, msg){
     let post = {
-        title: props.title,
-        author: props.author,
-        msg: props.msg,
-        timestamp: Date.now()
+        title, author, msg
     }
-    debugger;
+
     return {
         type: ADD_POST,
         id: nextId +=1,
+        timestamp: Date.now(),
         post
     }
 }
