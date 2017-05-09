@@ -1,13 +1,12 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 import All from '../posts/all';
-import Add from '../posts/add';
+import AddPost from '../../components/posts/add';
 import Last from '../posts/last';
 
 class Header extends React.Component {
     render() {
         return (
-            <Router>
                 <div>
                     <nav className="navbar navbar-inverse navbar-fixed-top">
                         <div className="container-fluid">
@@ -23,11 +22,10 @@ class Header extends React.Component {
                     </nav>
 
                     
-                    <Route exact path="/" component={Add}/>
+                    <Route exact path="/" render={() => <AddPost author={el=> this.author = el} title={el=> this.title = el} msg={el=> this.msg = el} notificationSystem={el=> this.notificationSystem = el} onClick={this.handleAddPost}/>}/>
                     <Route path="/all" component={All}/>
                     <Route path="/last" component={Last}/>
-                </div>        
-            </Router>
+                </div>  
         )
     }
 }

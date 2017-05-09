@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 import Header from './components/header/header';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import postReducer from './reducers/post-reducers'
 
 const App = () => {
     return (
-        <div>
-             <Header/>
-        </div>
+        <Provider store={createStore(postReducer)}>
+            <Router>
+                <Header/>
+            </Router>
+        </Provider>
        
     )
 }
