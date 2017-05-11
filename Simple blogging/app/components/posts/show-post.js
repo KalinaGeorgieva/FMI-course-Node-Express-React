@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown'
+import ReactMarkdown from 'react-markdown';
+
 
 const ShowPost = (props) => {
     return (
@@ -23,7 +24,7 @@ const ShowPost = (props) => {
                         <p></p>
                         <p>
                         <span> <i className="glyphicon glyphicon-user"></i> by {props.author} </span>
-                        <span>| <i className="glyphicon glyphicon-calendar"></i> {props.timestamp} </span>
+                        <span>| <i className="glyphicon glyphicon-calendar"></i> {new Date(props.timestamp).toDateString()} {new Date(props.timestamp).toLocaleDateString()}</span>
                         <span>| <i className="glyphicon glyphicon-tags"></i> Tags : </span>
                         <span className="label label-info">Snipp</span> 
                         <span className="label label-info">Bootstrap </span> 
