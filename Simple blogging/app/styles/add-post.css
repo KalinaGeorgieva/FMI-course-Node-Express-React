@@ -10,6 +10,7 @@
     height: 130px;
     width: 100%;
     border: 1px solid #BCBCBC;
+    margin-bottom: 5px;
 }
 
 .add-new-post-container .panel-info {
@@ -23,11 +24,9 @@
 
 .add-new-post-container .btn-icons {
     float: left;
-    margin-top: 10px;
 }
 
 .btn-add-new-post {
-    margin-top: 10px;
     font-size: 15px;
 }
 
@@ -36,7 +35,8 @@
 }
 
 #author-post, 
-#title-post {
+#title-post,
+#tags-post {
     font-family: Lato;
     font-size: 20px;
     float: left;
@@ -44,7 +44,8 @@
 }
 
 #author-post span,
-#title-post span {
+#title-post span,
+#tags-post span {
     margin-right: 10px;
 }
 

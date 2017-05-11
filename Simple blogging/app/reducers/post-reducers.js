@@ -14,6 +14,7 @@ const post = (state, action) => {
                 author: action.post.author,
                 title: action.post.title,
                 msg: action.post.msg,
+                tags: action.post.tags,
                 timestamp: action.timestamp,
                 active: true
             };

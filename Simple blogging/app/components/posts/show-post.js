@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 
 
 const ShowPost = (props) => {
+    let tags = props.tags.split("#").filter(function(item){return item});
     return (
         <div> 
             <div className="row all-posts">
@@ -26,10 +27,9 @@ const ShowPost = (props) => {
                         <span> <i className="glyphicon glyphicon-user"></i> by {props.author} </span>
                         <span>| <i className="glyphicon glyphicon-calendar"></i> {new Date(props.timestamp).toDateString()} {new Date(props.timestamp).toLocaleDateString()}</span>
                         <span>| <i className="glyphicon glyphicon-tags"></i> Tags : </span>
-                        <span className="label label-info">Snipp</span> 
-                        <span className="label label-info">Bootstrap </span> 
-                        <span className="label label-info">UI </span> 
-                        <span className="label label-info">growth </span>
+                        {tags.map(function(tag, index){
+                            return <span key={index} className="label label-info">{tag}</span> 
+                        })}
                         </p>
                     </div>
                     </div>

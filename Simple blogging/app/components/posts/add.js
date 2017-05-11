@@ -11,9 +11,10 @@ class Add extends React.Component {
         this.refs.author.value = "";
         this.refs.title.value = "";
         this.refs.msg.value = "";
+        this.refs.tags.value = "";
     }
     addPost() {
-        this.props.dispatch(addPost( this.refs.title.value, this.refs.author.value, this.refs.msg.value ));
+        this.props.dispatch(addPost( this.refs.title.value, this.refs.author.value, this.refs.msg.value, this.refs.tags.value ));
     }
 
     addNotification() {
@@ -46,11 +47,19 @@ class Add extends React.Component {
                                 <input type="text" ref="title" id="title-post-value" placeholder="Post title"/>
                         </div>
                         <textarea placeholder="Write your post here!" ref="msg" className="add-new-post-textarea"></textarea>
+                        <div id="tags-post">
+                            <span>Tags: </span>
+                            <input type="text" ref="tags" id="tags-post-value" placeholder="Tags"/>
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>    
                         <div className="btn-group btn-icons">
                             <button className="btn btn-md" id="btn-post-text" type="button"><span className="glyphicon glyphicon-text-background"></span></button>
                             <button className="btn btn-md" id="btn-post-picture" type="button"><span className="glyphicon glyphicon-picture"></span></button>
                         </div>
-                        <button className="btn btn-primary pull-right btn-add-new-post" type="button" onClick={() => this.onClick()} >Post</button>                    
+                        <button className="btn btn-primary pull-right btn-add-new-post" type="button" onClick={() => this.onClick()} >Post</button>                
                     </div>
                 </div>
             </div>
