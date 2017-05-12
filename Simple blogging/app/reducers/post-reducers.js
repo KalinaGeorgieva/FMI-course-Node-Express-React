@@ -17,7 +17,8 @@ const post = (state, action) => {
                 msg: action.post.msg,
                 tags: action.post.tags,
                 timestamp: action.timestamp,
-                status: action.post.status
+                status: action.post.status,
+                url: action.post.url
             };
         default:
             return state;

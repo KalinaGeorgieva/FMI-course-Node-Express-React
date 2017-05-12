@@ -3,10 +3,6 @@
     width: 700px;
 }
 
-.all-posts .title{
-    padding: 0;
-}
-
 .all-posts .span-group span {
     margin-right: 5px;
 }
@@ -34,4 +30,10 @@
     font-size: 15px;
     margin-right: 5px;
     margin-left: 5px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    float: left;
 }

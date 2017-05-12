@@ -31,13 +31,15 @@
 }
 
 .add-new-post-container .btn-icons span {
+    margin-right: 5px;
     top: 3px;
 }
 
 #author-post, 
 #title-post,
 #tags-post,
-#status-post {
+#status-post,
+.btn-icons {
     font-family: Lato;
     font-size: 20px;
     float: left;

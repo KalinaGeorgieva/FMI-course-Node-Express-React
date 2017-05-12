@@ -12,9 +12,10 @@ class Add extends React.Component {
         this.refs.title.value = "";
         this.refs.msg.value = "";
         this.refs.tags.value = "";
+        this.refs.url.value = "";
     }
     addPost() {
-        this.props.dispatch(addPost( this.refs.title.value, this.refs.author.value, this.refs.msg.value, this.refs.tags.value, this.refs.active.checked ));
+        this.props.dispatch(addPost( this.refs.title.value, this.refs.author.value, this.refs.msg.value, this.refs.tags.value, this.refs.active.checked, this.refs.url.value ));
     }
 
     addNotification() {
@@ -65,8 +66,8 @@ class Add extends React.Component {
                         <br/>
                         <br/>    
                         <div className="btn-group btn-icons">
-                            <button className="btn btn-md" id="btn-post-text" type="button"><span className="glyphicon glyphicon-text-background"></span></button>
-                            <button className="btn btn-md" id="btn-post-picture" type="button"><span className="glyphicon glyphicon-picture"></span></button>
+                            <span id="btn btn-post-picture" className="glyphicon glyphicon-picture"></span>
+                            <input type="text" ref="url" id="picture-url" placeholder="url"/>
                         </div>
                         <button className="btn btn-primary pull-right btn-add-new-post" type="button" onClick={() => this.onClick()} >Post</button>                
                     </div>

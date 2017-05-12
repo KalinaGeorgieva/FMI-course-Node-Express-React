@@ -16,7 +16,11 @@ const ShowPost = (props) => {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="span6">  
+                        {(props.url) ?
+                        <div className="col-md-4">  
+                              <img src={props.url}/>
+                        </div> : ""}
+                        <div className="col-md-8">  
                               <ReactMarkdown source={props.msg} />
                         </div>
                     </div>

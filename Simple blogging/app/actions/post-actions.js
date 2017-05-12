@@ -2,9 +2,9 @@ import {ADD_POST, REMOVE_POST, EDIT_POST, CHANGE_STATUS} from '../config/constan
 
 
 let nextId = 0;
-export function addPost(title, author, msg, tags, status){
+export function addPost(title, author, msg, tags, status, url){
     let post = {
-        title, author, msg, tags, status
+        title, author, msg, tags, status, url
     }
 
     return {
