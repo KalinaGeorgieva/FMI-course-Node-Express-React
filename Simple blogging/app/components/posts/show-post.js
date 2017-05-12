@@ -11,8 +11,13 @@ const ShowPost = (props) => {
                     <div className="row">
                         <div className="col-lg-9 title">
                             <h4><strong>{props.title}</strong></h4>
-                            <span className="glyphicon glyphicon-edit btn-edit-post btn"></span>
-                            <span className="glyphicon glyphicon-trash btn-remove-post btn" data-id={props.id} onClick={(e)=> props.onClickRemove(e)}></span>
+                            {props["edit-remove"] ? 
+                                <span>
+                                    <span className="glyphicon glyphicon-edit btn-edit-post btn"></span>
+                                    <span className="glyphicon glyphicon-trash btn-remove-post btn" data-id={props.id} onClick={(e)=> props.onClickRemove(e)}></span>
+                                </span>
+                                : ""
+                            }
                         </div>
                     </div>
                     <div className="row">
