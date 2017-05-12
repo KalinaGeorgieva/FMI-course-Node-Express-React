@@ -3,7 +3,8 @@ import { combineReducers } from "redux"
 
 
 const initialState = {
-  posts: []
+  posts: [],
+  status: "ALL"
 }
 
 const post = (state, action) => {
@@ -16,10 +17,8 @@ const post = (state, action) => {
                 msg: action.post.msg,
                 tags: action.post.tags,
                 timestamp: action.timestamp,
-                active: action.post.active
+                status: action.post.status
             };
-        case CHANGE_STATUS:
-            return state;
         default:
             return state;
     }
@@ -31,15 +30,13 @@ function postReducer(state = initialState, action) {
             return {posts: [
                 ...state.posts,
                 post(state, action)
-            ]};
-    case REMOVE_POST:
-      return {posts: state.posts.filter(post => post.id !== action.id)};;
-    case CHANGE_STATUS:
-        return state.map(p =>
-            post(p, action)
-        );
-    default:
-      return state;
+            ], status: state.status};
+        case REMOVE_POST:
+            return {posts: state.posts.filter(post => post.id !== action.id), status: state.status};
+        case CHANGE_STATUS:
+            return {status: action.status, posts: state.posts};
+        default:
+        return state;
   }
 }
 

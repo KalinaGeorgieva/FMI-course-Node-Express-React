@@ -26,7 +26,7 @@ const ShowPost = (props) => {
                         <p>
                         <span> <i className="glyphicon glyphicon-user"></i> by {props.author} </span>
                         <span>| <i className="glyphicon glyphicon-calendar"></i> {new Date(props.timestamp).toDateString()} {new Date(props.timestamp).toLocaleDateString()}</span>
-                        <span>| <i className="glyphicon glyphicon-check"></i> Status: {props.active ? "active": "inactive"} </span>                        
+                        <span>| <i className="glyphicon glyphicon-check"></i> Status: {(props.status) ? "active": "inactive"} </span>                        
                         {tags.length ? 
                         <span>
                             <span>| <i className="glyphicon glyphicon-tags"></i> Tags : </span>
