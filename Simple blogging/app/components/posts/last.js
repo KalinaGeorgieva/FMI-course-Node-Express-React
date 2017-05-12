@@ -12,7 +12,15 @@ class LastPosts extends React.Component {
 
     render() {
         let {status} = this.props;
-        let filterStatusPosts = statusFilter(this.props.posts, status);
+        let filterStatusPosts = statusFilter(this.props.posts, status);        
+        let filterSortedPosts = filterStatusPosts.slice(0, 15).sort(function(t1, t2){
+            if(t1.timestamp > t2.timestamp) {
+                return -1;
+            } else if (t1.timestamp < t2.timestamp) {
+                return 1;
+            }
+             return 0;
+        })
     return (
         <div id="app-page" >
              <div id="show-status"> Show only: 
@@ -21,8 +29,8 @@ class LastPosts extends React.Component {
                 <span className=" btn btn-primary btn-inactive" data-id="INACTIVE" onClick={(e)=> this.onClickStatus(e)}>Inactive</span> 
                 <hr/>
             </div> 
-            {filterStatusPosts.length ? 
-                filterStatusPosts.map((post) => <ShowPost key={post.id} {...post} edit-remove={false}/>)
+            {filterSortedPosts.length ? 
+                filterSortedPosts.map((post) => <ShowPost key={post.id} {...post} edit-remove={false}/>)
             : <div id="no-posts">No posts yet!</div>}
         </div>        
     )}

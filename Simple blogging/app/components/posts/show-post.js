@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 
 const ShowPost = (props) => {
     let tags = props.tags.split("#").filter(function(item){return item});
+    let date = new Date(props.timestamp);
     return (
         <div> 
             <div className="row all-posts">
@@ -34,7 +35,7 @@ const ShowPost = (props) => {
                         <p></p>
                         <p>
                         <span> <i className="glyphicon glyphicon-user"></i> by {props.author} </span>
-                        <span>| <i className="glyphicon glyphicon-calendar"></i> {new Date(props.timestamp).toDateString()} {new Date(props.timestamp).toLocaleDateString()}</span>
+                        <span>| <i className="glyphicon glyphicon-calendar"></i> {date.getHours()}:{date.getMinutes()}:{date.getSeconds()}h {date.toLocaleDateString()}</span>
                         <span>| <i className="glyphicon glyphicon-check"></i> Status: {(props.status) ? "active": "inactive"} </span>                        
                         {tags.length ? 
                         <span>
