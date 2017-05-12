@@ -33,7 +33,7 @@ function postReducer(state = initialState, action) {
                 post(state, action)
             ]};
     case REMOVE_POST:
-      return state.filter(post => post !== action.id);;
+      return {posts: state.posts.filter(post => post.id !== action.id)};;
     case CHANGE_STATUS:
         return state.map(p =>
             post(p, action)

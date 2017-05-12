@@ -17,7 +17,7 @@ export function addPost(title, author, msg, tags){
 
 export function removePost(id){
     return {
-        type: ADD_POST,
+        type: REMOVE_POST,
         id
     }
 }
@@ -31,7 +31,7 @@ export function editPost(post){
 
 export function changeStatus(id){
     return {
-        type: ADD_POST,
+        type: CHANGE_STATUS,
         id
     }
 }

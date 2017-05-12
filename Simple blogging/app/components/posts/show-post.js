@@ -12,7 +12,7 @@ const ShowPost = (props) => {
                         <div className="col-lg-9 title">
                             <h4><strong>{props.title}</strong></h4>
                             <span className="glyphicon glyphicon-edit btn-edit-post btn"></span>
-                            <span className="glyphicon glyphicon-trash btn-remove-post btn"></span>
+                            <span className="glyphicon glyphicon-trash btn-remove-post btn" data-id={props.id} onClick={(e)=> props.onClickRemove(e)}></span>
                         </div>
                     </div>
                     <div className="row">
@@ -27,9 +27,9 @@ const ShowPost = (props) => {
                         <span> <i className="glyphicon glyphicon-user"></i> by {props.author} </span>
                         <span>| <i className="glyphicon glyphicon-calendar"></i> {new Date(props.timestamp).toDateString()} {new Date(props.timestamp).toLocaleDateString()}</span>
                         <span>| <i className="glyphicon glyphicon-tags"></i> Tags : </span>
-                        {tags.map(function(tag, index){
+                        {tags.length ? tags.map(function(tag, index){
                             return <span key={index} className="label label-info">{tag}</span> 
-                        })}
+                        }) : ""}
                         </p>
                     </div>
                     </div>
