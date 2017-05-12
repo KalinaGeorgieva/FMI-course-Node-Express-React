@@ -16,7 +16,7 @@ const post = (state, action) => {
                 msg: action.post.msg,
                 tags: action.post.tags,
                 timestamp: action.timestamp,
-                active: true
+                active: action.post.active
             };
         case CHANGE_STATUS:
             return state;

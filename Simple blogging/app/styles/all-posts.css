@@ -25,3 +25,13 @@
     text-align: center;
     font-size: 25px;
 }
+
+#show-status{
+    font-size: 15px;
+}
+
+#show-status span{
+    font-size: 15px;
+    margin-right: 5px;
+    margin-left: 5px;
+}

@@ -23,8 +23,13 @@ class All extends React.Component {
     return (
         <div id="app-page" >
             {this.props.posts.length ? 
-                this.props.posts.map((post) => <ShowPost key={post.id} {...post} onClickRemove={(e) => {return this.onClickRemove(e)}}/>) 
-                    : <div id="no-posts">No posts yet!</div>}
+            <div id="show-status"> Show only: 
+                <span className="btn btn-primary btn-active">Active </span> 
+                <span className=" btn btn-primary btn-inactive">Inactive</span> 
+                {this.props.posts.map((post) => <ShowPost key={post.id} {...post} onClickRemove={(e) => {return this.onClickRemove(e)}}/>)}
+                <hr/>
+            </div> 
+            : <div id="no-posts">No posts yet!</div>}
             <NotificationSystem ref="notificationSystem" />
         </div>        
     )}
@@ -37,7 +42,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 let AllPosts = connect(
-  mapStateToProps,null
+  mapStateToProps, null
 )(All)
 
 export default AllPosts

@@ -36,7 +36,8 @@
 
 #author-post, 
 #title-post,
-#tags-post {
+#tags-post,
+#status-post {
     font-family: Lato;
     font-size: 20px;
     float: left;
@@ -45,8 +46,12 @@
 
 #author-post span,
 #title-post span,
-#tags-post span {
+#tags-post span,
+#status-post span {
     margin-right: 10px;
 }
 
+#status{
+    text-align: left;
+}
 

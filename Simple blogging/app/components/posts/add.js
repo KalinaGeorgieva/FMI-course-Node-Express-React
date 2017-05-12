@@ -14,7 +14,7 @@ class Add extends React.Component {
         this.refs.tags.value = "";
     }
     addPost() {
-        this.props.dispatch(addPost( this.refs.title.value, this.refs.author.value, this.refs.msg.value, this.refs.tags.value ));
+        this.props.dispatch(addPost( this.refs.title.value, this.refs.author.value, this.refs.msg.value, this.refs.tags.value, this.refs.active.checked ));
     }
 
     addNotification() {
@@ -29,6 +29,7 @@ class Add extends React.Component {
         this.nullValues();
         this.addNotification();
     } 
+
     render() {
         return (
             <div id="app-page" className="add-new-post-container">
@@ -45,6 +46,14 @@ class Add extends React.Component {
                         <div id="title-post">
                                 <span>Title: </span>
                                 <input type="text" ref="title" id="title-post-value" placeholder="Post title"/>
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <div id="status-post">
+                                <span id="status">Status: </span>
+                                <input type="radio" ref="active" name="status-input" defaultChecked={true}/><span> Active </span>
+                                <input type="radio" ref="inactive" name="status-input"/><span> Inactive </span>
                         </div>
                         <textarea placeholder="Write your post here!" ref="msg" className="add-new-post-textarea"></textarea>
                         <div id="tags-post">
