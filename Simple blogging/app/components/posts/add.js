@@ -25,7 +25,22 @@ class Add extends React.Component {
         });
     }  
 
+    checkInputs(){
+        if(!this.refs.title.value || !this.refs.author.value || !this.refs.msg.value ||  !this.refs.tags.value) {
+            this.refs.notificationSystem.addNotification({
+                message: 'To add post, please enter all required values: title, author, message and tags!',
+                level: 'warning'
+            });
+            return false;
+        }
+        
+        return true;
+    }
+
     onClick() {
+        if(!this.checkInputs()) {
+            return;
+        }
         this.addPost();
         this.nullValues();
         this.addNotification();
@@ -76,16 +91,6 @@ class Add extends React.Component {
         )
         }
     }
-
-// const mapStateToProps = (state) => ({
-//     posts: state.posts
-// })
-
-//  const mapDispatchToProps = (dispatch) => ({
-//         onClick(title){
-//             dispatch(addPost(title))
-//         }
-//     }); 
 
 
 let AddPost = connect(
