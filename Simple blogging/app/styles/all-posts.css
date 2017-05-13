@@ -1,6 +1,6 @@
 .all-posts {
     margin-left: 40px;
-    width: 700px;
+    width: 800px;
 }
 
 .all-posts .span-group span {
@@ -35,5 +35,10 @@
 img {
     width: 100px;
     height: 100px;
+    float: left;
+    margin-right: 10px;
+}
+
+.post-picture, .post-text {
     float: left;
 }

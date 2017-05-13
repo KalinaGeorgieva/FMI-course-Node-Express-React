@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 import All from '../posts/all';
 import AddPost from '../../components/posts/add';
 import Last from '../posts/last';
+import Edit from '../posts/edit';
 
 class Header extends React.Component {
     render() {
@@ -25,6 +26,7 @@ class Header extends React.Component {
                     <Route exact path="/" render={() => <AddPost/>}/>
                     <Route path="/all" component={All}/>
                     <Route path="/last" component={Last}/>
+                    <Route path="/edit" component={Edit}/>
                 </div>  
         )
     }

@@ -3,7 +3,25 @@ import { combineReducers } from "redux"
 
 
 const initialState = {
-  posts: [],
+  posts: [
+      { id: 0,
+        title: "Initial Post",
+        author: "Kalina",
+        msg: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        tags: "#love #sun #happy",
+        status: true,
+        url: "http://cdn.images.express.co.uk/img/dynamic/1/590x/dog-650299.jpg",
+        timestamp: Date.now()
+    }, { id: 1,
+        title: "Second Post",
+        author: "Kalina",
+        msg: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        tags: "#love #sun #happy",
+        status: false,
+        url: "https://www.pets4homes.co.uk/images/breeds/55/large/2525bdb43f08d9b6861b1d089f96fef2.jpg",
+        timestamp: Date.now()
+    }
+  ],
   status: "ALL"
 }
 

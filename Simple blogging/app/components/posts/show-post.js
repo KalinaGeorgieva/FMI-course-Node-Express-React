@@ -1,4 +1,5 @@
 import React from 'react';
+import {Route, Link} from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 
 
@@ -14,7 +15,7 @@ const ShowPost = (props) => {
                             <h4><strong>{props.title}</strong></h4>
                             {props["edit-remove"] ? 
                                 <span>
-                                    <span className="glyphicon glyphicon-edit btn-edit-post btn"></span>
+                                    <Link to={{ pathname: '/edit', search: `?${props.id}`}} ><span className="glyphicon glyphicon-edit btn-edit-post btn" data-id={props.id}></span></Link>
                                     <span className="glyphicon glyphicon-trash btn-remove-post btn" data-id={props.id} onClick={(e)=> props.onClickRemove(e)}></span>
                                 </span>
                                 : ""
@@ -23,10 +24,10 @@ const ShowPost = (props) => {
                     </div>
                     <div className="row">
                         {(props.url) ?
-                        <div className="col-md-4">  
+                        <div className="post-picture">  
                               <img src={props.url}/>
                         </div> : ""}
-                        <div className="col-md-8">  
+                        <div className="post-text">  
                               <ReactMarkdown source={props.msg} />
                         </div>
                     </div>
