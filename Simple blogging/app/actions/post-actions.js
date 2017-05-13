@@ -22,7 +22,10 @@ export function removePost(id){
     }
 }
 
-export function editPost(post){
+export function editPost(title, author, msg, tags, status, url, id){
+    let post = {
+        title, author, msg, tags, status, url, id, timestamp: Date.now()
+    }
     return {
         type: EDIT_POST,
         post

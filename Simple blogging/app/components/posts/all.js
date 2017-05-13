@@ -23,7 +23,7 @@ class All extends React.Component {
         <div id="app-page" >
             {this.props.posts.length ? 
                 this.props.posts.map((post) => <ShowPost key={post.id} {...post} onClickRemove={(e) => {return this.onClickRemove(e)}} edit-remove={true}/>)
-            : <div id="no-posts">No posts yet!</div>}
+            : <div className="no-posts">No posts yet!</div>}
             <NotificationSystem ref="notificationSystem" />
         </div>        
     )}

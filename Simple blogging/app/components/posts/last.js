@@ -31,7 +31,7 @@ class LastPosts extends React.Component {
             </div> 
             {filterSortedPosts && filterSortedPosts.length ? 
                 filterSortedPosts.map((post) => <ShowPost key={post.id} {...post} edit-remove={false}/>)
-            : <div id="no-posts">No posts yet!</div>}
+            : <div className="no-posts">No posts yet!</div>}
         </div>        
     )}
 }

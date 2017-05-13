@@ -54,8 +54,19 @@ function postReducer(state = initialState, action) {
             return {posts: state.posts.filter(post => post.id !== action.id), status: state.status};
         case CHANGE_STATUS:
             return {status: action.status, posts: state.posts};
+        case EDIT_POST:
+            let newPosts;
+            if (state.posts.length === 1) {
+                newPosts = [JSON.parse(JSON.stringify(action.post))]
+            } else{
+                newPosts = [ ...state.posts.slice(0, action.post.id), action.post, ...state.posts.slice(action.post.id + 1)]
+            }
+            return {
+                posts: newPosts,
+                status: state.status
+            }
         default:
-        return state;
+            return state;
   }
 }
 

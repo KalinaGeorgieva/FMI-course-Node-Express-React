@@ -2,17 +2,13 @@ import React from 'react';
 import NotificationSystem from 'react-notification-system';
 import {connect} from 'react-redux';
 import {dispatch} from 'redux';
-import {addPost} from '../../actions/post-actions';
+import {editPost} from '../../actions/post-actions';
 import {removePost} from '../../actions/post-actions';
 
 class Edit extends React.Component {
     
-    addPost() {
-        this.props.dispatch(addPost( this.refs.title.value, this.refs.author.value, this.refs.msg.value, this.refs.tags.value, this.refs.active.checked, this.refs.url.value ));
-    }
-
-    removePost(e){
-        this.props.dispatch(removePost(+e.target.getAttribute("data-id")))
+    editPost(e) {
+        this.props.dispatch(editPost( this.refs.title.value, this.refs.author.value, this.refs.msg.value, this.refs.tags.value, this.refs.active.checked, this.refs.url.value, +e.target.getAttribute("data-id") ));
     }
 
     addNotification() {
@@ -38,14 +34,17 @@ class Edit extends React.Component {
         if(!this.checkInputs()) {
             return;
         }
-        this.removePost(e);
-        this.addPost();
+        this.editPost(e);
         this.addNotification();
     } 
 
     render() {
         let postID = +this.props.location.search[1];
-        let post = this.props.posts[postID];
+        let postArr = this.props.posts.filter((post) => {return post.id === postID});
+        if(!postArr.length) {
+            return <div id="app-page" className="no-posts">No post!</div>
+        }
+        let post = postArr[0];
         return (
             <div id="app-page" className="add-new-post-container">
                 <NotificationSystem ref="notificationSystem" />
