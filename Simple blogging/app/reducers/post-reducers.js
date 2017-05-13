@@ -84,7 +84,6 @@ function postReducer(state = initialState, action) {
             return {status: action.status, posts: state.posts};
         case EDIT_POST:
             let newPosts = state.posts.map((post)=> {
-                debugger;
                 if(action.post.id !== post.id) {
                     return post
                 }
