@@ -1,10 +1,12 @@
+import {ACTIVE, INACTIVE, ALL} from '../config/constants'
+
 export default (posts, active) => {
     switch (active) {
-        case "ACTIVE":
+        case ACTIVE:
             return posts.filter((post) => (post.status));
-        case "INACTIVE":
+        case INACTIVE:
              return posts.filter((post) => !(post.status));
-        case "ALL":
+        case ALL:
             return posts
     }
 }
